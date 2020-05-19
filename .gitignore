@@ -1,0 +1,2 @@
+client/node_modules/
+# TODO Change the contents of .env files to not show your db uri
