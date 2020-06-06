@@ -34,7 +34,7 @@ func Auth(next http.Handler) http.Handler {
 		})
 
 		if claims, ok := token.Claims.(*utils.CustomClaims); ok {
-			fmt.Println("Auth DEBUG Username:", claims.Name, "Expiry: ", claims.ExpiresAt)
+			// fmt.Println("Auth DEBUG Username:", claims.Name, "Expiry: ", claims.ExpiresAt)
 			req.Header.Set("user-name", claims.Name)
 		} else {
 			w.WriteHeader(http.StatusUnauthorized)

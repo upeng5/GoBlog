@@ -167,7 +167,7 @@ func LoginUser(w http.ResponseWriter, req *http.Request) {
 
 }
 
-// GetUser : Gets the user by the id
+// GetUser : Gets the user by username
 func GetUser(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	client := database.GetDB()

@@ -23,6 +23,15 @@ type postRequestBody struct {
 // GetPosts : Gets all the posts in the database
 func GetPosts(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
+
+	if req.Header.Get("user-name") == "" {
+		w.WriteHeader(http.StatusUnauthorized)
+		json.NewEncoder(w).Encode(map[string]string{
+			"message": "Unauthorized",
+		})
+		return
+	}
+
 	client := database.GetDB()
 	var posts []models.Post
 

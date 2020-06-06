@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 )
 
-// ReadImage : Reads an image and returns a byte slice
+// ReadImage : Reads an image and returns a base64 image encoding as a string
 func ReadImage(imgPath string) string {
 	imgBytes, err := ioutil.ReadFile(imgPath)
 	if err != nil {
@@ -20,7 +20,7 @@ func ReadImage(imgPath string) string {
 
 // DefaultAvatar : Returns the default avatar bytes
 func DefaultAvatar() string {
-	absPath, err := filepath.Abs("C:/Users/somoa/Projects/go-work/goblog/images/default.png")
+	absPath, err := filepath.Abs("{Image Location}")
 	if err != nil {
 		fmt.Println("Path Error:", err)
 		return ""
