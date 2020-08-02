@@ -1,3 +1,2 @@
 client/node_modules/
 .vscode
-# TODO Change the contents of .env files to not show your db uri
